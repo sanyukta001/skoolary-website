@@ -32,6 +32,75 @@ body {
     padding: 0 20px;
 }
 
+/* Enhanced Section Styling */
+section {
+    padding: 6rem 0;
+    position: relative;
+    min-height: 60vh;
+}
+
+section:nth-child(even) {
+    background: var(--light-grey);
+}
+
+section:nth-child(odd) {
+    background: var(--white);
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--dark-grey);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--gradient-blue);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--medium-grey);
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Animation Classes */
+.animate-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-card:nth-child(1) { animation-delay: 0.1s; }
+.animate-card:nth-child(2) { animation-delay: 0.2s; }
+.animate-card:nth-child(3) { animation-delay: 0.3s; }
+.animate-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Walking Bus Animation */
 .walking-bus {
     position: absolute;
@@ -108,44 +177,36 @@ body {
     animation-name: walkBusReverse;
 }
 
-/* Bus bounce animation */
 .walking-bus i {
-    animation: busBounce 0.5s ease-in-out infinite alternate;
+    animation: busBounce 2s ease-in-out infinite;
 }
 
 @keyframes busBounce {
-    0% {
-        transform: translateY(0px);
+    0%, 100% {
+        transform: translateY(0);
     }
-    100% {
-        transform: translateY(-3px);
+    50% {
+        transform: translateY(-5px);
     }
 }
 
-/* Hide buses on mobile for better performance */
 @media (max-width: 768px) {
     .walking-bus {
         display: none;
     }
-}
-
-section {
-    padding: 5rem 0;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 3rem;
-    color: var(--dark-grey);
-}
-
-.section-subtitle {
-    text-align: center;
-    color: var(--medium-grey);
-    font-size: 1.1rem;
-    margin-bottom: 3rem;
+    
+    section {
+        padding: 4rem 0;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 3rem;
+    }
 }
 
 /* Responsive Design */
@@ -169,18 +230,14 @@ section {
     .container {
         padding: 0 15px;
     }
-}
-
-/* Animation Classes */
-[data-aos] {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease;
-}
-
-[data-aos].aos-animate {
-    opacity: 1;
-    transform: translateY(0);
+    
+    section {
+        padding: 3rem 0;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
 }
 
 /* Smooth Scrolling */
@@ -227,17 +284,13 @@ body.dark-mode .dot.active {
     background: #60a5fa;
 }
 
-body.dark-mode .shape {
-    background: rgba(60, 130, 250, 0.2);
-}
-
 body.dark-mode .problems {
     background: #1f2937;
 }
 
 body.dark-mode .problem-card {
-    background: #2d3748;
-    color: #e0e0e0;
+    background: #374151;
+    border-color: #4a5568;
 }
 
 body.dark-mode .problem-card h3 {
@@ -249,12 +302,12 @@ body.dark-mode .problem-card p {
 }
 
 body.dark-mode .features {
-    background: #181c1f;
+    background: #111827;
 }
 
 body.dark-mode .feature-card {
-    background: #2d3748;
-    color: #e0e0e0;
+    background: #374151;
+    border-color: #4a5568;
 }
 
 body.dark-mode .feature-card h3 {
@@ -270,8 +323,8 @@ body.dark-mode .target-users {
 }
 
 body.dark-mode .user-card {
-    background: #2d3748;
-    color: #e0e0e0;
+    background: #374151;
+    border-color: #4a5568;
 }
 
 body.dark-mode .user-card h3 {
@@ -283,12 +336,12 @@ body.dark-mode .user-card p {
 }
 
 body.dark-mode .competition {
-    background: #181c1f;
+    background: #111827;
 }
 
 body.dark-mode .competition-card {
-    background: #2d3748;
-    color: #e0e0e0;
+    background: #374151;
+    border-color: #4a5568;
 }
 
 body.dark-mode .competition-card h3 {
@@ -304,7 +357,8 @@ body.dark-mode .benefits {
 }
 
 body.dark-mode .benefit-item {
-    background: #2d3748;
+    background: #374151;
+    border-color: #4a5568;
 }
 
 body.dark-mode .benefit-content h3 {
@@ -328,12 +382,12 @@ body.dark-mode .section-subtitle {
 }
 
 body.dark-mode .cta {
-    background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+    background: #1f2937;
 }
 
 body.dark-mode .btn-secondary {
-    color: #60a5fa;
     border-color: #60a5fa;
+    color: #60a5fa;
 }
 
 body.dark-mode .btn-secondary:hover {
@@ -354,26 +408,28 @@ body.dark-mode .walking-bus {
 }
 
 body.dark-mode .user-icon {
-    background: #4a5568;
+    background: #1e3a8a;
     color: #60a5fa;
 }
 
 body.dark-mode .competition-icon {
-    background: #4a5568;
+    background: #1e3a8a;
     color: #60a5fa;
 }
 
 body.dark-mode .feature-icon {
-    background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+    background: #1e3a8a;
+    color: #60a5fa;
 }
 
 body.dark-mode .benefit-number {
-    background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+    background: #1e3a8a;
+    color: #60a5fa;
 }
 
 body.dark-mode .problem-number {
-    background: #60a5fa;
-    color: #1f2937;
+    background: #1e3a8a;
+    color: #60a5fa;
 }
 
 body.dark-mode .gradient-text {
@@ -404,7 +460,7 @@ body.dark-mode .problem-card::before {
 }
 
 body.dark-mode .route-line {
-    background: linear-gradient(to bottom, #60a5fa, #2d3748);
+    background: #60a5fa;
 }
 
 body.dark-mode .bus-icon {

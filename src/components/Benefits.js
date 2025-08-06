@@ -13,21 +13,21 @@ const Benefits = () => {
       <div className="container">
         <h2 className="section-title">Why Choose Skoolary</h2>
         <div className="benefits-list">
-          <div className="benefit-item" data-aos="fade-up">
+          <div className="benefit-item animate-card">
             <div className="benefit-number">01</div>
             <div className="benefit-content">
               <h3>Parents Trust</h3>
               <p>Peace of mind for parents through real-time bus tracking and instant alerts.</p>
             </div>
           </div>
-          <div className="benefit-item" data-aos="fade-up" data-aos-delay="100">
+          <div className="benefit-item animate-card">
             <div className="benefit-number">02</div>
             <div className="benefit-content">
               <h3>Fleet Efficiency</h3>
               <p>Increased operational efficiency and safety for school fleet managers.</p>
             </div>
           </div>
-          <div className="benefit-item" data-aos="fade-up" data-aos-delay="200">
+          <div className="benefit-item animate-card">
             <div className="benefit-number">03</div>
             <div className="benefit-content">
               <h3>Easy Commute</h3>

@@ -13,21 +13,21 @@ const TargetUsers = () => {
       <div className="container">
         <h2 className="section-title">Target Users</h2>
         <div className="users-grid">
-          <div className="user-card" data-aos="fade-up">
+          <div className="user-card animate-card">
             <div className="user-icon">
               <i className="fas fa-clipboard-check"></i>
             </div>
             <h3>Fleet Manager</h3>
             <p>School Transport Managers who oversee fleet operations.</p>
           </div>
-          <div className="user-card" data-aos="fade-up" data-aos-delay="100">
+          <div className="user-card animate-card">
             <div className="user-icon">
               <i className="fas fa-user-cog"></i>
             </div>
             <h3>School Admin</h3>
             <p>School Administrators looking for scalable digital solutions.</p>
           </div>
-          <div className="user-card" data-aos="fade-up" data-aos-delay="200">
+          <div className="user-card animate-card">
             <div className="user-icon">
               <i className="fas fa-search"></i>
             </div>
