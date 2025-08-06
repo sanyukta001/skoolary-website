@@ -1,0 +1,54 @@
+.benefits {
+    background: var(--white);
+}
+
+.benefits-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--light-grey);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow);
+}
+
+.benefit-number {
+    background: var(--gradient-blue);
+    color: var(--white);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.benefit-content h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--dark-grey);
+}
+
+.benefit-content p {
+    color: var(--medium-grey);
+    line-height: 1.6;
+}
+
+.benefits .walking-bus {
+    top: 40%;
+}
