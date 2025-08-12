@@ -53,17 +53,16 @@ export default function CustomCursor() {
         }}
       >
         <svg 
-          width="20" 
-          height="20" 
-          viewBox="0 0 20 20" 
+          width="24" 
+          height="24" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg" 
           className={`${cursorColor} drop-shadow-lg`}
         >
-          <path 
-            d="M7 2L7 14L10.5 11L14 18L16 17L12.5 10L16 10L7 2Z" 
-            fill="currentColor" 
-            stroke={isDarkCursor ? '#1F2937' : '#E5B800'} 
-            strokeWidth="0.5"
-          />
+          <path d="M10.2426 13.4142L13.0711 10.5858C13.4616 10.1953 14.0948 10.1953 14.4853 10.5858L17.3137 13.4142C17.8663 13.9668 17.6426 15 16.8284 15H7.17157C6.35736 15 6.13369 13.9668 6.68629 13.4142L10.2426 13.4142Z" fill="currentColor"/>
+          <path d="M10 15V18C10 19.1046 10.8954 20 12 20C13.1046 20 14 19.1046 14 18V15H10Z" fill="currentColor"/>
+          <path d="M12 4C10.3431 4 9 5.34315 9 7V11C9 12.6569 10.3431 14 12 14C13.6569 14 15 12.6569 15 11V7C15 5.34315 13.6569 4 12 4Z" fill="currentColor"/>
         </svg>
       </div>
     </>
