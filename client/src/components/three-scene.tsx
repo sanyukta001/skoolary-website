@@ -1,54 +1,30 @@
 import { useEffect, useRef } from "react";
-
-declare global {
-  interface Window {
-    THREE: any;
-  }
-}
+import * as THREE from "three";
 
 export default function ThreeScene() {
   const mountRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number>();
-  const rendererRef = useRef<any>(null);
-  
+  const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
   useEffect(() => {
     let isCleanedUp = false;
 
-    // Load Three.js if not already loaded
-    const loadThreeJS = () => {
-      return new Promise<void>((resolve) => {
-        if (window.THREE) {
-          resolve();
-          return;
-        }
-        
-        const script = document.createElement('script');
-        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
-        script.onload = () => resolve();
-        script.onerror = () => resolve(); // Continue even if loading fails
-        document.head.appendChild(script);
-      });
-    };
-
-    const initScene = async () => {
+    const initScene = () => {
       if (!mountRef.current || isCleanedUp) return;
-
-      await loadThreeJS();
-
-      if (!window.THREE || !mountRef.current || isCleanedUp) return;
 
       const container = mountRef.current;
 
       // Create scene
-      const scene = new window.THREE.Scene();
-      const camera = new window.THREE.PerspectiveCamera(
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(
         75,
         container.offsetWidth / container.offsetHeight,
         0.1,
         1000
       );
       
-      const renderer = new window.THREE.WebGLRenderer({ 
+      const renderer = new THREE.WebGLRenderer({ 
         alpha: true,
         antialias: true
       });
@@ -59,26 +35,24 @@ export default function ThreeScene() {
       rendererRef.current = renderer;
 
       // Create simple animated bus geometry
-      const geometry = new window.THREE.BoxGeometry(2, 1, 4);
-      const material = new window.THREE.MeshBasicMaterial({ 
+      const geometry = new THREE.BoxGeometry(2, 1, 4);
+      const material = new THREE.MeshBasicMaterial({ 
         color: 0x1F2937, 
         wireframe: true,
         transparent: true,
         opacity: 0.3
       });
-      const bus = new window.THREE.Mesh(geometry, material);
+      const bus = new THREE.Mesh(geometry, material);
       scene.add(bus);
 
       // Add ambient light
-      const ambientLight = new window.THREE.AmbientLight(0xffffff, 0.6);
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
       scene.add(ambientLight);
 
       camera.position.z = 8;
       camera.position.y = 2;
 
       const animate = () => {
-        if (isCleanedUp) return;
-        
         animationRef.current = requestAnimationFrame(animate);
         bus.rotation.y += 0.005;
         bus.position.y = Math.sin(Date.now() * 0.001) * 0.5;
@@ -86,7 +60,18 @@ export default function ThreeScene() {
         renderer.render(scene, camera);
       };
 
-      animate();
+      const startAnimation = () => {
+        if (!animationRef.current) {
+          animate();
+        }
+      };
+
+      const stopAnimation = () => {
+        if (animationRef.current) {
+          cancelAnimationFrame(animationRef.current);
+          animationRef.current = undefined;
+        }
+      };
 
       // Handle resize
       const handleResize = () => {
@@ -95,11 +80,21 @@ export default function ThreeScene() {
         camera.updateProjectionMatrix();
         renderer.setSize(container.offsetWidth, container.offsetHeight);
       };
-
       window.addEventListener('resize', handleResize);
+
+      // Intersection Observer to play/pause animation
+      observerRef.current = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+          startAnimation();
+        } else {
+          stopAnimation();
+        }
+      });
+      observerRef.current.observe(container);
 
       return () => {
         window.removeEventListener('resize', handleResize);
+        stopAnimation();
       };
     };
 
@@ -107,6 +102,9 @@ export default function ThreeScene() {
 
     return () => {
       isCleanedUp = true;
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }

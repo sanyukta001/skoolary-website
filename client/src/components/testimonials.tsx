@@ -1,12 +1,14 @@
 import { Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useQuery } from "@tanstack/react-query";
+import { Skeleton } from "@/components/ui/skeleton";
 
-const testimonials = [
+const testimonialsData = [
   {
     name: "Priya Sharma",
     role: "Parent, Delhi Public School",
     content: "Skoolary has completely changed how we manage our morning routine. Knowing exactly when the bus will arrive gives us peace of mind and saves so much time.",
-    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150"
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150"
   },
   {
     name: "Rajesh Kumar",
@@ -22,9 +24,38 @@ const testimonials = [
   }
 ];
 
+// Simulate fetching data
+const fetchTestimonials = async () => {
+  await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate network delay
+  return testimonialsData;
+};
+
+const TestimonialSkeleton = () => (
+  <div className="bg-white rounded-3xl p-8 shadow-lg">
+    <div className="flex items-center mb-6">
+      <Skeleton className="h-5 w-24" />
+    </div>
+    <Skeleton className="h-4 w-full mb-2" />
+    <Skeleton className="h-4 w-full mb-2" />
+    <Skeleton className="h-4 w-3/4 mb-6" />
+    <div className="flex items-center">
+      <Skeleton className="w-12 h-12 rounded-full mr-4" />
+      <div className="w-full">
+        <Skeleton className="h-4 w-1/2 mb-2" />
+        <Skeleton className="h-3 w-1/3" />
+      </div>
+    </div>
+  </div>
+);
+
 export default function Testimonials() {
+  const { data: testimonials, isLoading } = useQuery({
+    queryKey: ["testimonials"],
+    queryFn: fetchTestimonials,
+  });
+
   return (
-    <section id="testimonials" className="py-20 bg-light-gray">
+    <section id="testimonials" className="py-16 lg:py-20 bg-light-gray">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-poppins font-bold text-dark-gray mb-6">
@@ -36,33 +67,41 @@ export default function Testimonials() {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white rounded-3xl p-8 shadow-lg card-hover">
-              <div className="flex items-center mb-6">
-                <div className="flex text-primary-yellow text-xl">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-current" />
-                  ))}
+          {isLoading ? (
+            <>
+              <TestimonialSkeleton />
+              <TestimonialSkeleton />
+              <TestimonialSkeleton />
+            </>
+          ) : (
+            testimonials?.map((testimonial, index) => (
+              <div key={index} className="bg-white rounded-3xl p-8 shadow-lg card-hover">
+                <div className="flex items-center mb-6">
+                  <div className="flex text-primary-yellow text-xl">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 fill-current" />
+                    ))}
+                  </div>
+                </div>
+
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  "{testimonial.content}"
+                </p>
+
+                <div className="flex items-center">
+                  <img
+                    src={testimonial.avatar}
+                    alt={testimonial.name}
+                    className="w-12 h-12 rounded-full object-cover mr-4"
+                  />
+                  <div>
+                    <div className="font-semibold text-dark-gray">{testimonial.name}</div>
+                    <div className="text-gray-500 text-sm">{testimonial.role}</div>
+                  </div>
                 </div>
               </div>
-
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                "{testimonial.content}"
-              </p>
-
-              <div className="flex items-center">
-                <img
-                  src={testimonial.avatar}
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover mr-4"
-                />
-                <div>
-                  <div className="font-semibold text-dark-gray">{testimonial.name}</div>
-                  <div className="text-gray-500 text-sm">{testimonial.role}</div>
-                </div>
-              </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
 
         <div className="text-center mt-16">

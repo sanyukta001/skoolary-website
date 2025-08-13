@@ -16,7 +16,7 @@ const schoolBenefits = [
 
 export default function BenefitsSection() {
   return (
-    <section id="benefits" className="py-20 bg-dark-gray relative">
+    <section id="benefits" className="py-16 lg:py-20 bg-dark-gray relative">
       {/* Background overlay */}
       <div 
         className="absolute inset-0 opacity-10 bg-cover bg-center"

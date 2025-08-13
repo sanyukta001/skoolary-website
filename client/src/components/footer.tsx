@@ -1,4 +1,5 @@
-import { Bus, Facebook, Twitter, Instagram, Linkedin, Heart } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Heart } from "lucide-react";
+import logoImage from "@/assets/logo_final.png";
 
 const footerLinks = {
   quickLinks: [
@@ -46,21 +47,20 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-dark-gray text-white py-16">
+    <footer className="bg-dark-gray text-white py-16 lg:py-20">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center md:text-left">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-primary-yellow rounded-lg flex items-center justify-center">
-                <Bus className="h-6 w-6 text-dark-gray" />
-              </div>
-              <span className="text-2xl font-poppins font-bold">Skoolary.in</span>
+            <div className="mb-6 flex justify-center md:justify-start">
+              <a href="#home" onClick={() => scrollToSection('#home')}>
+                <img src={logoImage} alt="Skoolary Logo" className="h-20 md:h-24 lg:h-28 w-auto" />
+              </a>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Making school transportation safer, smarter, and more reliable for families across India.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 justify-center md:justify-start">
               {socialLinks.map((social, index) => {
                 const Icon = social.icon;
                 return (
@@ -84,7 +84,7 @@ export default function Footer() {
                 <button
                   key={index}
                   onClick={() => scrollToSection(link.href)}
-                  className="block text-gray-300 hover:text-primary-yellow transition-colors text-left"
+                  className="block w-full md:w-auto text-gray-300 hover:text-primary-yellow transition-colors"
                 >
                   {link.label}
                 </button>
@@ -113,7 +113,7 @@ export default function Footer() {
             <h3 className="text-xl font-semibold mb-6">Get in Touch</h3>
             <div className="space-y-4">
               {contactInfo.map((contact, index) => (
-                <div key={index} className="flex items-start space-x-3">
+                <div key={index} className="flex items-start space-x-3 justify-center md:justify-start">
                   <span className="text-primary-yellow text-lg">{contact.icon}</span>
                   <span className="text-gray-300 whitespace-pre-line">{contact.text}</span>
                 </div>

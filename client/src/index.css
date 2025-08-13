@@ -261,4 +261,14 @@
       transform: scale(4);
     }
   }
+
+  .animate-dash {
+    animation: dash 5s linear infinite;
+  }
+
+  @keyframes dash {
+    to {
+      stroke-dashoffset: -100;
+    }
+  }
 }
