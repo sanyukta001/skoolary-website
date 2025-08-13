@@ -6,8 +6,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import ClickSparkEffect from "@/components/click-spark-effect";
-import CustomCursor from "@/components/custom-cursor";
-import { useEffect } from "react";
 
 function Router() {
   return (
@@ -19,17 +17,9 @@ function Router() {
 }
 
 function App() {
-  useEffect(() => {
-    document.body.style.cursor = 'none';
-    return () => {
-      document.body.style.cursor = 'auto';
-    };
-  }, []);
-
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <CustomCursor />
         <ClickSparkEffect />
         <Toaster />
         <Router />
