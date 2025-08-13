@@ -71,7 +71,6 @@
 @layer base {
   * {
     @apply border-border;
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 2L7 14L10.5 11L14 18L16 17L12.5 10L16 10L7 2Z" fill="%23E5B800" stroke="%23D4A600" stroke-width="0.5"/></svg>'), auto;
   }
 
   body {
@@ -81,22 +80,6 @@
   
   html {
     scroll-behavior: smooth;
-  }
-
-  /* Custom cursor for interactive elements */
-  button, a, [role="button"], input, textarea, select {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 2L7 14L10.5 11L14 18L16 17L12.5 10L16 10L7 2Z" fill="%23E5B800" stroke="%23D4A600" stroke-width="1"/></svg>'), pointer !important;
-  }
-
-  /* Dark cursor for yellow backgrounds */
-  .hero-bg *, .bg-primary-yellow *, .bg-yellow-400 *, .bg-yellow-300 * {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 2L7 14L10.5 11L14 18L16 17L12.5 10L16 10L7 2Z" fill="%23374151" stroke="%231F2937" stroke-width="0.5"/></svg>'), auto !important;
-  }
-
-  .hero-bg button, .hero-bg a, .hero-bg [role="button"],
-  .bg-primary-yellow button, .bg-primary-yellow a, .bg-primary-yellow [role="button"],
-  .bg-yellow-400 button, .bg-yellow-400 a, .bg-yellow-400 [role="button"] {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 2L7 14L10.5 11L14 18L16 17L12.5 10L16 10L7 2Z" fill="%23374151" stroke="%231F2937" stroke-width="1"/></svg>'), pointer !important;
   }
 }
 
