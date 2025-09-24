@@ -1,0 +1,319 @@
+file structure of the project :
+
+attached_assets/
+client/
+-src/
+--assets/
+---child-avatar.png
+---driver-avatar.png
+---hero_area_img.png
+---logo_final.png
+--components/
+---ui/
+---about-section.tsx
+---apps-section.tsx
+---benefits-section.tsx
+---click-spark-effect.tsx
+---contact-section.tsx
+---custom-cursor.tsx
+---footer.tsx
+---hero-section.tsx
+---how-it-works.tsx
+---navigation.tsx
+---services-overview.tsx
+---testimonials.tsx
+---three-scenestsx
+--hooks/
+---use-active-action.ts
+---use-mobile.tsx
+---use-three.ts
+---use-toast.ts
+--lib/
+---google-sheets.ts
+---queryClient.ts
+---utils.ts
+--pages/
+---home.tsx
+---not-found.tsx
+--App.tsx
+--index.css
+--main.tsx
+-index.html
+server/
+-index.ts
+-routes.ts
+-vite.ts
+.gitignore
+components.json
+drizzle.config.ts
+package-lock.json
+package.json
+postcss.config.js
+tailwind.config.ts
+tsconfig.json
+vite.config.ts
+
+
+issue:
+file structure of the project :
+
+attached_assets/
+client/
+-src/
+--assets/
+---child-avatar.png
+---driver-avatar.png
+---hero_area_img.png
+---logo_final.png
+--components/
+---ui/
+---about-section.tsx
+---apps-section.tsx
+---benefits-section.tsx
+---click-spark-effect.tsx
+---contact-section.tsx
+---custom-cursor.tsx
+---footer.tsx
+---hero-section.tsx
+---how-it-works.tsx
+---navigation.tsx
+---services-overview.tsx
+---testimonials.tsx
+---three-scenestsx
+--hooks/
+---use-active-action.ts
+---use-mobile.tsx
+---use-three.ts
+---use-toast.ts
+--lib/
+---google-sheets.ts
+---queryClient.ts
+---utils.ts
+--pages/
+---home.tsx
+---not-found.tsx
+--App.tsx
+--index.css
+--main.tsx
+-index.html
+server/
+-index.ts
+-routes.ts
+-vite.ts
+.gitignore
+components.json
+drizzle.config.ts
+package-lock.json
+package.json
+postcss.config.js
+tailwind.config.ts
+tsconfig.json
+vite.config.ts
+
+i have tried hosting this in the ec2 server in aws:
+
+my path in the server for this project is :
+var/www/html/skoolary-website:
+
+ubuntu@ip-172-31-1-208:/$ cd var
+ubuntu@ip-172-31-1-208:/var$ ls
+backups  cache  crash  lib  local  lock  log  mail  opt  run  snap  spool  tmp  www
+ubuntu@ip-172-31-1-208:/var$ cd www
+ubuntu@ip-172-31-1-208:/var/www$ ls
+html
+ubuntu@ip-172-31-1-208:/var/www$ cd html
+ubuntu@ip-172-31-1-208:/var/www/html$ ls
+index.nginx-debian.html  skoolary-website
+ubuntu@ip-172-31-1-208:/var/www/html$ cd skkolary-website
+-bash: cd: skkolary-website: No such file or directory
+ubuntu@ip-172-31-1-208:/var/www/html$ cd skoolary-website
+ubuntu@ip-172-31-1-208:/var/www/html/skoolary-website$ ls
+attached_assets  dist               package-lock.json  replit.md  tailwind.config.ts
+client           drizzle.config.ts  package.json       server     tsconfig.json
+components.json  node_modules       postcss.config.js  shared     vite.config.ts
+ubuntu@ip-172-31-1-208:/var/www/html/skoolary-website$ 
+and also sharing the nginx path:
+ubuntu@ip-172-31-1-208:/etc$ cd nginx
+ubuntu@ip-172-31-1-208:/etc/nginx$ ls
+conf.d        fastcgi_params  koi-win     modules-available  nginx.conf    scgi_params      sites-enabled  uwsgi_params
+fastcgi.conf  koi-utf         mime.types  modules-enabled    proxy_params  sites-available  snippets       win-utf
+ubuntu@ip-172-31-1-208:/etc/nginx$ cd sites-enabled
+ubuntu@ip-172-31-1-208:/etc/nginx/sites-enabled$ ls
+skoolary.in
+ubuntu@ip-172-31-1-208:/etc/nginx/sites-enabled$ 
+
+cat skoolary.in
+# HTTP → HTTPS redirect
+server {
+    listen 80;
+    listen [::]:80;
+    server_name skoolary.in www.skoolary.in;
+    
+    # ACME challenge for Certbot renewals
+    location ^~ /.well-known/acme-challenge/ {
+        allow all;
+        root /var/www/html;
+    }
+    
+    # Redirect everything else to HTTPS
+    location / {
+        return 301 https://$host$request_uri;
+    }
+}
+
+# HTTPS server
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name skoolary.in www.skoolary.in;
+
+    # SSL certificates (Certbot will populate these)
+    ssl_certificate /etc/letsencrypt/live/skoolary.in/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/skoolary.in/privkey.pem;
+
+    # SSL optimization
+    ssl_session_cache shared:le_nginx_SSL:10m;
+    ssl_session_timeout 1440m;
+    ssl_session_tickets off;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers "ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384";
+
+    # Security headers
+    add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload";
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
+    add_header Referrer-Policy "strict-origin";
+    add_header Permissions-Policy "geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()";
+
+    # Proxy to Node.js app
+    location / {
+        proxy_pass http://localhost:5002;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+
+        # Timeouts
+        proxy_connect_timeout 60s;
+        proxy_read_timeout 300s;
+    }
+
+    # Block hidden files
+    location ~ /\. {
+        deny all;
+        access_log off;
+        log_not_found off;
+    }
+
+    # Static assets caching
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg)$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+}
+ubuntu@ip-172-31-1-208:/etc/nginx/sites-enabled$
+
+pm2 logs:
+ubuntu@ip-172-31-1-208:/var/www/html/skoolary-website$ pm2 list
+┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
+│ id │ name               │ mode     │ ↺    │ status    │ cpu      │ memory   │
+├────┼────────────────────┼──────────┼──────┼───────────┼──────────┼──────────┤
+│ 0  │ skoolary           │ fork     │ 0    │ online    │ 0%       │ 95.8mb   │
+└────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘
+ubuntu@ip-172-31-1-208:/var/www/html/skoolary-website$ pm2 log 0
+[TAILING] Tailing last 15 lines for [0] process (change the value with --lines option)
+/home/ubuntu/.pm2/logs/skoolary-error.log last 15 lines:
+0|skoolary |     at serveStatic (file:///var/www/html/skoolary-website/dist/index.js:115:11)
+0|skoolary |     at file:///var/www/html/skoolary-website/dist/index.js:164:5
+0|skoolary |     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+0|skoolary | Error: Could not find the build directory: /var/www/html/skoolary-website/public, make sure to build the client first
+0|skoolary |     at serveStatic (file:///var/www/html/skoolary-website/dist/index.js:115:11)
+0|skoolary |     at file:///var/www/html/skoolary-website/dist/index.js:164:5
+0|skoolary |     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+0|skoolary | Error: Could not find the build directory: /var/www/html/skoolary-website/public, make sure to build the client first
+0|skoolary |     at serveStatic (file:///var/www/html/skoolary-website/dist/index.js:115:11)
+0|skoolary |     at file:///var/www/html/skoolary-website/dist/index.js:164:5
+0|skoolary |     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+0|skoolary | Error: Could not find the build directory: /var/www/html/skoolary-website/public, make sure to build the client first
+0|skoolary |     at serveStatic (file:///var/www/html/skoolary-website/dist/index.js:115:11)
+0|skoolary |     at file:///var/www/html/skoolary-website/dist/index.js:164:5
+0|skoolary |     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+/home/ubuntu/.pm2/logs/skoolary-out.log last 15 lines:
+0|skoolary | 5:44:49 AM [express] serving on port 5002
+0|skoolary | 5:45:44 AM [express] serving on port 5002
+0|skoolary | 5:47:24 AM [express] serving on port 5002
+0|skoolary | 5:47:50 AM [express] serving on port 5002
+0|skoolary | 5:48:45 AM [express] serving on port 5002
+0|skoolary | 5:59:22 AM [express] serving on port 5002
+0|skoolary | 5:59:37 AM [express] serving on port 5002
+0|skoolary | 6:06:29 AM [express] serving on port 5002
+0|skoolary | 6:07:32 AM [express] serving on port 5002
+0|skoolary | 6:15:06 AM [express] serving on port 5002
+0|skoolary | 6:17:12 AM [express] serving on port 5002
+0|skoolary | 6:26:32 AM [express] serving on port 5002
+0|skoolary | 2:54:48 PM [express] serving on port 5002
+0|skoolary | 2025-08-14T15:01:25: 3:01:25 PM [express] serving on port 5002
+0|skoolary | 2025-08-14T15:08:55: 3:08:55 PM [express] serving on port 5002
+
+full cloudflare dns records including mailing server:
+A
+skoolary.in
+13.204.75.161
+
+Auto
+EditWhen toggled open, an additional table row will be added below this row to enable editing DNS records.
+
+
+A
+www
+13.204.75.161
+
+Auto
+EditWhen toggled open, an additional table row will be added below this row to enable editing DNS records.
+
+
+MX
+skoolary.in
+smtp.secureserver.net
+
+10
+DNS only
+
+Auto
+EditWhen toggled open, an additional table row will be added below this row to enable editing DNS records.
+
+
+MX
+skoolary.in
+mailstore1.secureserver.net
+0
+DNS only
+
+Auto
+EditWhen toggled open, an additional table row will be added below this row to enable editing DNS records.
+
+
+TXT
+_dmarc
+"v=DMARC1; p=quarantine; adkim=r; aspf=r; rua=mailto:dmarc_rua@onsecureserver.net;"
+DNS only
+
+Auto
+EditWhen toggled open, an additional table row will be added below this row to enable editing DNS records.
+
+
+TXT
+skoolary.in
+"v=spf1 include:secureserver.net -all"
+DNS only
+
+Auto
+EditWhen toggled open, an additional table row will be added below this row to enable editing DNS records.
+
+
+if i want to make the server live at https://skoolary.in then what do i have to do because right now it is showing white screen
