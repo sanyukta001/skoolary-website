@@ -31,22 +31,24 @@ export default function BenefitsSection() {
             Benefits for <span className="text-primary-yellow">Everyone</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Discover how Skoolary creates value for parents, schools, and transportation providers through innovative technology.
+            See how Skoolary helps schools, parents, and transport teams work together seamlessly, ensuring safety, efficiency, and peace of mind for every journey.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
-          {/* For Parents */}
+
+
+          {/* For Schools */}
           <div className="bg-white/10 rounded-3xl p-8 glass-effect">
             <div className="flex items-center mb-6">
-              <div className="w-12 h-12 bg-primary-yellow rounded-xl flex items-center justify-center mr-4">
-                <Users className="h-6 w-6 text-dark-gray" />
+              <div className="w-12 h-12 bg-success-green rounded-xl flex items-center justify-center mr-4">
+                <School className="h-6 w-6 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-white">For Parents</h3>
+              <h3 className="text-2xl font-bold text-white">For Schools</h3>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              {parentBenefits.map((benefit, index) => {
+              {schoolBenefits.map((benefit, index) => {
                 const Icon = benefit.icon;
                 return (
                   <div key={index} className="text-center">
@@ -60,18 +62,17 @@ export default function BenefitsSection() {
               })}
             </div>
           </div>
-
-          {/* For Schools */}
+                    {/* For Parents */}
           <div className="bg-white/10 rounded-3xl p-8 glass-effect">
             <div className="flex items-center mb-6">
-              <div className="w-12 h-12 bg-success-green rounded-xl flex items-center justify-center mr-4">
-                <School className="h-6 w-6 text-white" />
+              <div className="w-12 h-12 bg-primary-yellow rounded-xl flex items-center justify-center mr-4">
+                <Users className="h-6 w-6 text-dark-gray" />
               </div>
-              <h3 className="text-2xl font-bold text-white">For Schools</h3>
+              <h3 className="text-2xl font-bold text-white">For Parents</h3>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              {schoolBenefits.map((benefit, index) => {
+              {parentBenefits.map((benefit, index) => {
                 const Icon = benefit.icon;
                 return (
                   <div key={index} className="text-center">

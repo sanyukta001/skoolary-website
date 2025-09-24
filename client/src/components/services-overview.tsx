@@ -4,25 +4,25 @@ const services = [
   {
     icon: MapPin,
     title: "Real-time Tracking",
-    description: "Track your child's bus location in real-time with GPS precision and live updates.",
+    description: "Monitor every school bus with GPS accuracy and live updates, ensuring complete visibility of student journeys.",
     color: "bg-primary-yellow text-dark-gray"
   },
   {
     icon: Shield,
     title: "Safety First",
-    description: "Instant alerts for delays, breakdowns, or route changes to keep you informed.",
+    description: "Receive instant alerts on delays, breakdowns, or route changes so your staff can act quickly and keep parents reassured.",
     color: "bg-success-green text-white"
   },
   {
     icon: Smartphone,
     title: "Multi-Platform",
-    description: "Dedicated apps for parents, drivers, and school administrators.",
+    description: "A dedicated portal for school administrators, along with easy-to-use apps for parents and drivers, keeping everyone connected.",
     color: "bg-blue-accent text-white"
   },
   {
     icon: TrendingUp,
     title: "Smart Analytics",
-    description: "Comprehensive reports and insights for better transportation management.",
+    description: "Access detailed reports and insights to optimize routes, improve efficiency, and make data-driven decisions for safer transport.",
     color: "bg-purple-500 text-white"
   }
 ];
@@ -36,7 +36,7 @@ export default function ServicesOverview() {
             Why Choose <span className="text-gradient">Skoolary?</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Experience the future of school transportation with our comprehensive tracking solution designed for modern families and educational institutions.
+            With Skoolary, your school can make every journey safer and every parent more assured. Our simple platform helps you manage buses with ease, keep families informed in real time, and strengthen the trust between school and home.
           </p>
         </div>
 

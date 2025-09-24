@@ -7,15 +7,13 @@ const footerLinks = {
     { href: "#how-it-works", label: "How it Works" },
     { href: "#apps", label: "Mobile Apps" },
     { href: "#benefits", label: "Benefits" },
-    { href: "#testimonials", label: "Testimonials" },
     { href: "#contact", label: "Contact" }
   ],
   support: [
     { href: "#", label: "Help Center" },
     { href: "#", label: "Privacy Policy" },
     { href: "#", label: "Terms of Service" },
-    { href: "#", label: "Safety Guidelines" },
-    { href: "#", label: "API Documentation" }
+    { href: "#", label: "Safety Guidelines" }
   ]
 };
 
@@ -27,9 +25,9 @@ const socialLinks = [
 ];
 
 const contactInfo = [
-  { icon: "📞", text: "+91-9876543210" },
-  { icon: "✉️", text: "hello@skoolary.in" },
-  { icon: "📍", text: "Koramangala, Bangalore\nKarnataka 560034, India" }
+  { icon: "📞", text: "+91-6294035244" },
+  { icon: "✉️", text: "connect@skoolary.in" },
+  { icon: "📍", text: "India" }
 ];
 
 export default function Footer() {

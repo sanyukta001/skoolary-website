@@ -82,13 +82,13 @@ export default function ContactSection() {
     {
       icon: Mail,
       title: "Email us",
-      value: "hello@skoolary.in",
+      value: "connect@skoolary.in",
       color: "bg-success-green"
     },
     {
       icon: MapPin,
       title: "Visit us",
-      value: "Bangalore, Karnataka, India",
+      value: "India",
       color: "bg-blue-accent"
     }
   ];
@@ -102,7 +102,7 @@ export default function ContactSection() {
               Ready to Get <span className="text-gradient">Started?</span>
             </h2>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Join thousands of schools and parents who trust Skoolary for safe and reliable school transportation tracking.
+              Join the growing number of schools and parents who rely on Skoolary for safe, efficient, and reliable school transportation management.
             </p>
 
             <div className="space-y-6">
@@ -153,7 +153,7 @@ export default function ContactSection() {
                     type="tel"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    placeholder="+91 9876543210"
+                    placeholder="+91 9999999999"
                     required
                     className="rounded-xl border-gray-200 focus:border-primary-yellow focus:ring-primary-yellow/20"
                   />
@@ -170,7 +170,7 @@ export default function ContactSection() {
                   type="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  placeholder="your.email@example.com"
+                  placeholder="yourmail@gmail.com"
                   required
                   className="rounded-xl border-gray-200 focus:border-primary-yellow focus:ring-primary-yellow/20"
                 />

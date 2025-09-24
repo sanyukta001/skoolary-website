@@ -51,14 +51,14 @@ export default function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
             <h2 className="text-4xl lg:text-5xl font-poppins font-bold text-white mb-6">
-              From a Parent's Worry to a
-              <span className="text-primary-yellow"> Nation's Trust</span>
+              From Daily Challenges to
+              <span className="text-primary-yellow"> Trusted Partnerships</span>
             </h2>
             <p className="text-lg text-gray-300 mb-4 leading-relaxed">
-              It all started with a simple, universal feeling: the moment your child's school bus turns the corner, you want to know they are safe. We are parents, just like you, who transformed that daily concern into a mission.
+              Every school carries the responsibility of ensuring that students travel safely. Parents expect peace of mind, and schools need a reliable way to deliver it.
             </p>
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-              Skoolary was born not in a boardroom, but from a desire to connect families with their children's journey. Today, we are India's most trusted school bus tracking solution, dedicated to providing the peace of mind every parent deserves.
+              That’s why we built Skoolary. A solution designed not in a boardroom, but from real on-ground needs. With real-time bus tracking and instant updates, we help schools strengthen parent trust, simplify coordination, and lead with safety.
             </p>
 
             <div className="grid grid-cols-2 gap-6 mb-8">
@@ -80,7 +80,7 @@ export default function AboutSection() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-white mb-2">Our Mission</h3>
-                <p className="text-gray-300">To provide every parent with the peace of mind that comes from knowing their child is safe, every step of the way.</p>
+                <p className="text-gray-300">To empower schools with smart, reliable transport solutions that ensure every student’s safety and strengthen the trust between schools and families.</p>
               </div>
             </div>
             <div className="bg-white/5 rounded-2xl p-6 flex items-start gap-4 glass-effect">
@@ -89,7 +89,7 @@ export default function AboutSection() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-white mb-2">Our Commitment</h3>
-                <p className="text-gray-300">We are relentlessly committed to building technology that is reliable, easy to use, and above all, keeps the safety of your child at its core.</p>
+                <p className="text-gray-300">We are dedicated to providing schools with technology that is dependable, simple to use, and designed with student safety at its core.</p>
               </div>
             </div>
           </div>

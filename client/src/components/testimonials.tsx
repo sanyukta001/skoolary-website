@@ -1,4 +1,4 @@
-import { Star } from "lucide-react";
+/*import { Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useQuery } from "@tanstack/react-query";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -115,4 +115,7 @@ export default function Testimonials() {
       </div>
     </section>
   );
+}*/
+export default function Testimonials() {
+  return null;
 }

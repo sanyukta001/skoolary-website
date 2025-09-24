@@ -93,10 +93,10 @@ export default function HeroSection() {
           {/* LEFT CONTENT */}
           <div className="text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-poppins font-bold text-white mb-6">
-              Seamless School Bus <br className="hidden sm:block" />
-              <span className="text-dark-gray">Management,</span>
+              Make every<br className="hidden sm:block" />
+              <span className="text-dark-gray">school journey</span>
               <br />
-              <span className="text-dark-gray">Enhanced Student Safety</span>
+              <span className="text-dark-gray">safer with Skoolary.</span>
             </h1>
             <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
               Empower your school with Skoolary’s advanced real-time tracking

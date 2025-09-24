@@ -6,8 +6,17 @@ import distanceTrackingMockup from "@assets/generated_images/Bus_distance_tracki
 
 const apps = [
   {
+    title: "School Portal",
+    description: "A comprehensive dashboard for administrators to manage the fleet, organize routes, monitor all activities, and stay on top of school transportation effortless",
+    icon: School,
+    gradient: "from-blue-accent to-blue-500",
+    textColor: "text-white",
+    buttonStyle: "bg-white text-blue-accent hover:bg-gray-50",
+    features: ["Fleet management", "Analytics dashboard", "Parent communication", "Report generation"]
+  },
+  {
     title: "Parent App",
-    description: "Stay connected with your child's journey. Real-time tracking, notifications, and peace of mind.",
+    description: "Stay connected with your child's journey. Receive real-time updates, notifications, and peace of mind every day.",
     icon: Heart,
     gradient: "from-primary-yellow to-yellow-400",
     textColor: "text-dark-gray",
@@ -16,22 +25,14 @@ const apps = [
   },
   {
     title: "Driver App",
-    description: "Streamlined interface for drivers to manage routes, mark attendance, and report incidents.",
+    description: "A simple, streamlined interface for drivers to manage routes, mark attendance, report incidents, and navigate efficiently.",
     icon: Car,
     gradient: "from-success-green to-green-400",
     textColor: "text-white",
     buttonStyle: "bg-white text-success-green hover:bg-gray-50",
     features: ["Route optimization", "Student attendance", "Incident reporting", "Navigation assistance"]
   },
-  {
-    title: "School Portal",
-    description: "Comprehensive dashboard for administrators to manage fleet, routes, and monitor all activities.",
-    icon: School,
-    gradient: "from-blue-accent to-blue-500",
-    textColor: "text-white",
-    buttonStyle: "bg-white text-blue-accent hover:bg-gray-50",
-    features: ["Fleet management", "Analytics dashboard", "Parent communication", "Report generation"]
-  }
+
 ];
 
 export default function AppsSection() {
@@ -40,10 +41,10 @@ export default function AppsSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-poppins font-bold text-dark-gray mb-6">
-            Three Apps, <span className="text-gradient">One Solution</span>
+            One Portal Two Apps, <span className="text-gradient">One Solution</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Tailored experiences for every stakeholder in your child's school transportation journey.
+            Designed for every stakeholder in school transportation, including school administrators, parents, and drivers, the platform brings safety, control, and peace of mind together in one place.
           </p>
         </div>
 
@@ -91,7 +92,7 @@ export default function AppsSection() {
               See Parent App in Action
             </h3>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
-              Real-time notifications keep parents informed about their child's bus journey with precise timing and location updates.
+              Keep families reassured with real-time notifications that show exactly where buses are and provide timely updates on every student’s journey.
             </p>
           </div>
 

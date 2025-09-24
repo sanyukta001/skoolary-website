@@ -6,24 +6,24 @@ const steps = [
   {
     number: 1,
     icon: Download,
-    title: "Download & Register",
-    description: "Download the Skoolary app and register with your school's unique code. Quick setup in under 2 minutes.",
+    title: "Register Your School",
+    description: "Sign up on the Skoolary portal with just a few details. Our team will reach out to help your school get set up quickly and smoothly.",
     color: "bg-primary-yellow text-dark-gray",
     features: ["Secure data encryption", "Multiple children support", "Emergency contacts"]
   },
   {
     number: 2,
     icon: UserPlus,
-    title: "Add Your Child",
-    description: "Add your child's details and link them to their assigned bus route. Secure and private information management.",
+    title: "Add Students & Routes",
+    description: "Easily link students to their assigned buses and routes. All information is managed securely and privately, giving you full control over transportation data.",
     color: "bg-success-green text-white",
     features: ["Quick setup process", "Route assignment", "Privacy protection"]
   },
   {
     number: 3,
     icon: MapPinned,
-    title: "Track & Monitor",
-    description: "Real-time tracking with instant notifications for pickup, drop-off, delays, and emergencies.",
+    title: "Monitor in Real-Time",
+    description: "Keep track of every bus journey with live updates and notifications for pickups, drop-offs, delays, or any emergencies—helping staff stay proactive and parents reassured.",
     color: "bg-blue-accent text-white",
     features: ["Live notifications", "Real-time updates", "Emergency alerts"]
   }
@@ -38,7 +38,7 @@ export default function HowItWorks() {
             How <span className="text-gradient">Skoolary</span> Works
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Simple, secure, and seamless - experience the easiest way to track your child's school bus journey with just a few taps.
+            Simple, secure, and seamless - Skoolary makes it easy for schools to track and manage every bus journey while keeping parents informed and reassured.
           </p>
         </div>
 
