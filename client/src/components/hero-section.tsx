@@ -123,16 +123,16 @@ export default function HeroSection() {
           </div>
 
           {/* RIGHT CONTENT (Bus + Tablet) */}
-          <div className="absolute -bottom-10 right-0 w-full max-w-xl">
+          <div className="relative mt-12 lg:absolute lg:mt-0 lg:-bottom-[470px] lg:right-[200px] lg:w-full lg:max-w-xl">
             <img
               src={busImage}
               alt="School Bus"
-              className="w-full transform scale-125"
+              className="w-full transform scale-125 lg:scale-[1.85]"
             />
             <img
               src={tabletImage}
               alt="Tablet Map"
-              className="absolute -top-24 right-10 w-40 sm:w-56 md:w-64 lg:w-72 rounded-lg drop-shadow-xl"
+              className="absolute -top-12 right-4 w-40 sm:w-56 md:w-64 lg:-top-[214px] lg:right-[-152px] lg:w-96 rounded-lg drop-shadow-xl"
             />
           </div>
         </div>

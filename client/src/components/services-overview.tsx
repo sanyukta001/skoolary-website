@@ -5,7 +5,7 @@ const services = [
     icon: MapPin,
     title: "Real-time Tracking",
     description: "Monitor every school bus with GPS accuracy and live updates, ensuring complete visibility of student journeys.",
-    color: "bg-primary-yellow text-dark-gray"
+    color: "bg-[#fde047] text-dark-gray"
   },
   {
     icon: Shield,

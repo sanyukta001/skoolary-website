@@ -107,7 +107,7 @@ export default function Testimonials() {
         <div className="text-center mt-16">
           <Button
             size="lg"
-            className="button-hover bg-primary-yellow text-dark-gray hover:bg-yellow-400 px-8 py-4 rounded-xl shadow-lg transform hover:scale-105"
+            className="button-hover bg-[#fde047] text-dark-gray hover:bg-yellow-400 px-8 py-4 rounded-xl shadow-lg transform hover:scale-105"
           >
             Join 50,000+ Happy Parents
           </Button>
