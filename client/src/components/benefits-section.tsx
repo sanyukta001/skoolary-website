@@ -1,14 +1,14 @@
 import { Users, School, Clock, Shield, Bell, Smartphone, TrendingUp, Handshake, FileText, Settings } from "lucide-react";
 
 const parentBenefits = [
-  { icon: Clock, title: "Save Time", description: "No more waiting at bus stops", color: "text-primary-yellow" },
+  { icon: Clock, title: "Save Time", description: "No more waiting at bus stops", color: "text-[#fde047]" },
   { icon: Shield, title: "Peace of Mind", description: "Know your child is safe", color: "text-success-green" },
   { icon: Bell, title: "Stay Informed", description: "Real-time notifications", color: "text-blue-accent" },
   { icon: Smartphone, title: "Easy Access", description: "Simple mobile interface", color: "text-purple-500" }
 ];
 
 const schoolBenefits = [
-  { icon: TrendingUp, title: "Better Management", description: "Optimize routes & resources", color: "text-primary-yellow" },
+  { icon: TrendingUp, title: "Better Management", description: "Optimize routes & resources", color: "text-[#fde047]" },
   { icon: Handshake, title: "Parent Satisfaction", description: "Improved communication", color: "text-success-green" },
   { icon: FileText, title: "Easy Reporting", description: "Automated documentation", color: "text-blue-accent" },
   { icon: Settings, title: "Cost Efficiency", description: "Reduce operational costs", color: "text-purple-500" }
@@ -28,7 +28,7 @@ export default function BenefitsSection() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-poppins font-bold text-white mb-6">
-            Benefits for <span className="text-primary-yellow">Everyone</span>
+            Benefits for <span className="text-[#fde047]">Everyone</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             See how Skoolary helps schools, parents, and transport teams work together seamlessly, ensuring safety, efficiency, and peace of mind for every journey.
@@ -65,7 +65,7 @@ export default function BenefitsSection() {
                     {/* For Parents */}
           <div className="bg-white/10 rounded-3xl p-8 glass-effect">
             <div className="flex items-center mb-6">
-              <div className="w-12 h-12 bg-primary-yellow rounded-xl flex items-center justify-center mr-4">
+              <div className="w-12 h-12 bg-[#fde047] rounded-xl flex items-center justify-center mr-4">
                 <Users className="h-6 w-6 text-dark-gray" />
               </div>
               <h3 className="text-2xl font-bold text-white">For Parents</h3>

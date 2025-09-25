@@ -19,13 +19,6 @@ function Router() {
 }
 
 function App() {
-  useEffect(() => {
-    document.body.style.cursor = 'none';
-    return () => {
-      document.body.style.cursor = 'auto';
-    };
-  }, []);
-
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>

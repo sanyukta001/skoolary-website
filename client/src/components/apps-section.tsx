@@ -104,7 +104,7 @@ export default function AppsSection() {
                   alt="Parent App Notification - Bus arriving in 5 minutes"
                   className="w-64 h-auto rounded-2xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-300"
                 />
-                <div className="absolute -bottom-4 -left-4 bg-primary-yellow text-dark-gray px-4 py-2 rounded-lg text-sm font-semibold">
+                <div className="absolute -bottom-4 -left-4 bg-[#fde047] text-dark-gray px-4 py-2 rounded-lg text-sm font-semibold">
                   Live Notifications
                 </div>
               </div>

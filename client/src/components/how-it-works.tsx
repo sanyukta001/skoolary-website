@@ -8,7 +8,7 @@ const steps = [
     icon: Download,
     title: "Register Your School",
     description: "Sign up on the Skoolary portal with just a few details. Our team will reach out to help your school get set up quickly and smoothly.",
-    color: "bg-primary-yellow text-dark-gray",
+    color: "bg-[#fde047] text-dark-gray",
     features: ["Secure data encryption", "Multiple children support", "Emergency contacts"]
   },
   {
@@ -97,7 +97,7 @@ export default function HowItWorks() {
                     </div>
                     <div className="bg-white rounded-lg p-3 shadow-sm">
                       <div className="flex items-center space-x-2">
-                        <div className="w-3 h-3 bg-primary-yellow rounded-full"></div>
+                        <div className="w-3 h-3 bg-[#fde047] rounded-full"></div>
                         <span className="text-sm text-gray-600">En route to your stop</span>
                       </div>
                     </div>

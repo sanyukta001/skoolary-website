@@ -75,7 +75,7 @@ export default function AboutSection() {
 
           <div className="space-y-8">
             <div className="bg-white/5 rounded-2xl p-6 flex items-start gap-4 glass-effect">
-              <div className="w-12 h-12 bg-primary-yellow/20 text-primary-yellow rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-[#fde047]/20 text-primary-yellow rounded-lg flex items-center justify-center flex-shrink-0">
                 <Heart className="h-6 w-6" />
               </div>
               <div>
