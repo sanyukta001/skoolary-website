@@ -36,7 +36,7 @@ export default function ServicesOverview() {
             Why Choose <span className="text-gradient">Skoolary?</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            With Skoolary, your school can make every journey safer and every parent more assured. Our simple platform helps you manage buses with ease, keep families informed in real time, and strengthen the trust between school and home.
+            With Skoolary, your school can make every journey safer and every parent more assured. Our simple platform helps you manage buses with ease, keep guardians informed in real time, and strengthen the trust between school and home.
           </p>
         </div>
 

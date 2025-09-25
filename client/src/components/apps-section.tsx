@@ -1,8 +1,8 @@
 import { Heart, Car, School } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
-import parentNotificationMockup from "@assets/generated_images/Bus_tracking_notification_mockup_c8727275.png";
-import distanceTrackingMockup from "@assets/generated_images/Bus_distance_tracking_app_7d12d762.png";
+import parentNotificationMockup from "../assets/bus_distance.png";
+import distanceTrackingMockup from "../assets/bus_tracking.png";
 
 const apps = [
   {
@@ -86,13 +86,13 @@ export default function AppsSection() {
         </div>
 
         {/* Parent App Mockup Showcase */}
-        <div className="mt-20 bg-gradient-to-br from-primary-blue to-light-blue rounded-3xl p-8 lg:p-12">
+        <div className="mt-20 bg-gradient-to-br from-blue-400 to-yellow-200 rounded-3xl p-8 lg:p-12">
           <div className="text-center mb-12">
             <h3 className="text-3xl lg:text-4xl font-poppins font-bold text-white mb-4">
               See Parent App in Action
             </h3>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
-              Keep families reassured with real-time notifications that show exactly where buses are and provide timely updates on every student’s journey.
+              Keep guardians reassured with real-time notifications that show exactly where buses are and provide timely updates on every student’s journey.
             </p>
           </div>
 
@@ -102,7 +102,7 @@ export default function AppsSection() {
                 <img 
                   src={parentNotificationMockup} 
                   alt="Parent App Notification - Bus arriving in 5 minutes"
-                  className="w-64 h-auto rounded-2xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-300"
+                  className="w-64 h-auto rounded-2xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-300 bg-blue-400"
                 />
                 <div className="absolute -bottom-4 -left-4 bg-[#fde047] text-dark-gray px-4 py-2 rounded-lg text-sm font-semibold">
                   Live Notifications
@@ -125,26 +125,26 @@ export default function AppsSection() {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-6 mt-12">
-            <div className="text-center text-white">
+            <div className="text-center text-blue-accent">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Check className="h-8 w-8 text-white" />
+                <Check className="h-8 w-8 text-blue-accent" />
               </div>
               <h4 className="text-lg font-semibold mb-2">Bus Arrival Alerts</h4>
-              <p className="text-white/80">Get notified when the bus is 5-10 minutes away from your stop</p>
+              <p className="text-blue-accent/80">Get notified when the bus is 5-10 minutes away from your stop</p>
             </div>
-            <div className="text-center text-white">
+             <div className="text-center text-blue-accent">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Check className="h-8 w-8 text-white" />
+                <Check className="h-8 w-8 text-blue-accent" />
               </div>
               <h4 className="text-lg font-semibold mb-2">Distance Tracking</h4>
-              <p className="text-white/80">See exact distance and estimated arrival time in real-time</p>
+              <p className="text-blue-accent/80">See exact distance and estimated arrival time in real-time</p>
             </div>
-            <div className="text-center text-white">
+             <div className="text-center text-blue-accent">
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Check className="h-8 w-8 text-white" />
+                <Check className="h-8 w-8 text-blue-accent" />
               </div>
               <h4 className="text-lg font-semibold mb-2">Safety Updates</h4>
-              <p className="text-white/80">Receive instant notifications when your child boards or leaves the bus</p>
+              <p className="text-blue-accent/80">Receive instant notifications when your child boards or leaves the bus</p>
             </div>
           </div>
         </div>
