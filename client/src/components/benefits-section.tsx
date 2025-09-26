@@ -16,21 +16,13 @@ const schoolBenefits = [
 
 export default function BenefitsSection() {
   return (
-    <section id="benefits" className="py-16 lg:py-20 bg-dark-gray relative">
-      {/* Background overlay */}
-      <div 
-        className="absolute inset-0 opacity-10 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')"
-        }}
-      />
-
-      <div className="container mx-auto px-4 relative z-10">
+    <section id="benefits" className="py-16 lg:py-20 bg-white">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-poppins font-bold text-white mb-6">
+          <h2 className="text-4xl lg:text-5xl font-poppins font-bold text-dark-gray mb-6">
             Benefits for <span className="text-[#fde047]">Everyone</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             See how Skoolary helps schools, parents, and transport teams work together seamlessly, ensuring safety, efficiency, and peace of mind for every journey.
           </p>
         </div>
@@ -39,12 +31,12 @@ export default function BenefitsSection() {
 
 
           {/* For Schools */}
-          <div className="bg-white/10 rounded-3xl p-8 glass-effect">
+          <div className="bg-yellow-400 rounded-3xl p-8 shadow-lg">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 bg-success-green rounded-xl flex items-center justify-center mr-4">
                 <School className="h-6 w-6 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-white">For Schools</h3>
+              <h3 className="text-2xl font-bold text-dark-gray">For Schools</h3>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
@@ -55,20 +47,20 @@ export default function BenefitsSection() {
                     <div className={`w-16 h-16 ${benefit.color}/20 rounded-2xl flex items-center justify-center mx-auto mb-3`}>
                       <Icon className={`h-6 w-6 ${benefit.color}`} />
                     </div>
-                    <h4 className="text-white font-semibold mb-2">{benefit.title}</h4>
-                    <p className="text-gray-300 text-sm">{benefit.description}</p>
+                    <h4 className="text-dark-gray font-semibold mb-2">{benefit.title}</h4>
+                    <p className="text-gray-600 text-sm">{benefit.description}</p>
                   </div>
                 );
               })}
             </div>
           </div>
                     {/* For Parents */}
-          <div className="bg-white/10 rounded-3xl p-8 glass-effect">
+          <div className="bg-blue-500 rounded-3xl p-8 shadow-lg">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 bg-[#fde047] rounded-xl flex items-center justify-center mr-4">
                 <Users className="h-6 w-6 text-dark-gray" />
               </div>
-              <h3 className="text-2xl font-bold text-white">For Parents</h3>
+              <h3 className="text-2xl font-bold text-dark-gray">For Parents</h3>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
@@ -79,8 +71,8 @@ export default function BenefitsSection() {
                     <div className={`w-16 h-16 ${benefit.color}/20 rounded-2xl flex items-center justify-center mx-auto mb-3`}>
                       <Icon className={`h-6 w-6 ${benefit.color}`} />
                     </div>
-                    <h4 className="text-white font-semibold mb-2">{benefit.title}</h4>
-                    <p className="text-gray-300 text-sm">{benefit.description}</p>
+                    <h4 className="text-dark-gray font-semibold mb-2">{benefit.title}</h4>
+                    <p className="text-gray-600 text-sm">{benefit.description}</p>
                   </div>
                 );
               })}

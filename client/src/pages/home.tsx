@@ -8,6 +8,7 @@ import BenefitsSection from "@/components/benefits-section";
 import Testimonials from "@/components/testimonials";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
+// import ParentMockupSection from '@/components/parent-mockup';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <AboutSection />
       <HowItWorks />
       <AppsSection />
+      {/* <ParentMockupSection/> */}
       <BenefitsSection />
       <Testimonials />
       <ContactSection />

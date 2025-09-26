@@ -59,7 +59,7 @@ export default function Testimonials() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-poppins font-bold text-dark-gray mb-6">
-            What <span className="text-gradient">Parents</span> Say
+            What <span className="text-yellow-400">Parents</span> Say
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Hear from thousands of satisfied parents who trust Skoolary with their children's daily school commute.

@@ -33,7 +33,7 @@ export default function ServicesOverview() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-poppins font-bold text-dark-gray mb-6">
-            Why Choose <span className="text-gradient">Skoolary?</span>
+            Why Choose <span className="text-yellow-400">Skoolary?</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             With Skoolary, your school can make every journey safer and every parent more assured. Our simple platform helps you manage buses with ease, keep guardians informed in real time, and strengthen the trust between school and home.

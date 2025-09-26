@@ -6,16 +6,10 @@ const stats = [
   { value: 500, label: "Schools Partnered", suffix: "+" },
   { value: 50000, label: "Journeys Secured", suffix: "+" },
   { value: 99, label: "Parent Satisfaction", suffix: "%" },
-  { value: 25, label: "Cities Served", suffix: "+" },
+  { value: 25, label: "Cities Served", suffix: "+" }
 ];
 
-function AnimatedCounter({
-  value,
-  suffix = "",
-}: {
-  value: number;
-  suffix?: string;
-}) {
+function AnimatedCounter({ value, suffix = "" }: { value: number; suffix?: string }) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -39,19 +33,14 @@ function AnimatedCounter({
 
   return (
     <span>
-      {count.toLocaleString()}
-      {suffix}
+      {count.toLocaleString()}{suffix}
     </span>
   );
 }
 
 export default function AboutSection() {
   return (
-    <section
-      id="about"
-      className="py-16 lg:py-20 relative overflow-hidden"
-      style={{ background: "linear-gradient(to right, #55A5DA, #E3C370)" }}
-    >
+    <section id="about" className="py-16 lg:py-20 relative overflow-hidden" style={{ background: "linear-gradient(to right, #55A5DA, #E3C370)" }}>
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
@@ -60,16 +49,10 @@ export default function AboutSection() {
               <span className="text-primary-yellow"> Trusted Partnerships</span>
             </h2>
             <p className="text-lg text-white mb-4 leading-relaxed">
-              Every school carries the responsibility of ensuring that students
-              travel safely. Parents expect peace of mind, and schools need a
-              reliable way to deliver it.
+              Every school carries the responsibility of ensuring that students travel safely. Parents expect peace of mind, and schools need a reliable way to deliver it.
             </p>
-
             <p className="text-lg text-white mb-8 leading-relaxed">
-              That’s why we built Skoolary. A solution designed not in a
-              boardroom, but from real on-ground needs. With real-time bus
-              tracking and instant updates, we help schools strengthen parent
-              trust, simplify coordination, and lead with safety.
+              That's why we built Skoolary. A solution designed not in a boardroom, but from real on-ground needs. With real-time bus tracking and instant updates, we help schools strengthen parent trust, simplify coordination, and lead with safety.
             </p>
 
             <div className="grid grid-cols-2 gap-6 mb-8">
@@ -78,7 +61,7 @@ export default function AboutSection() {
                   <div className="text-3xl lg:text-4xl font-bold text-primary-yellow mb-2">
                     <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                   </div>
-                  <div className="text-white">{stat.label}</div>
+                  <div className="text-gray-400">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -90,14 +73,8 @@ export default function AboutSection() {
                 <Heart className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">
-                  Our Mission
-                </h3>
-                <p className="text-white">
-                  To empower schools with smart, reliable transport solutions
-                  that ensure every student’s safety and strengthen the trust
-                  between schools and families.
-                </p>
+                <h3 className="text-xl font-semibold text-white mb-2">Our Mission</h3>
+                <p className="text-gray-300">To empower schools with smart, reliable transport solutions that ensure every student's safety and strengthen the trust between schools and families.</p>
               </div>
             </div>
             <div className="bg-white/5 rounded-2xl p-6 flex items-start gap-4 glass-effect">
@@ -105,14 +82,8 @@ export default function AboutSection() {
                 <Shield className="h-6 w-6" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">
-                  Our Commitment
-                </h3>
-                <p className="text-white">
-                  We are dedicated to providing schools with technology that is
-                  dependable, simple to use, and designed with student safety at
-                  its core.
-                </p>
+                <h3 className="text-xl font-semibold text-white mb-2">Our Commitment</h3>
+                <p className="text-gray-300">We are dedicated to providing schools with technology that is dependable, simple to use, and designed with student safety at its core.</p>
               </div>
             </div>
           </div>

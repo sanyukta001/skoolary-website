@@ -69,10 +69,10 @@
 }
 
 @layer base {
-  * {
+  /* * {
     @apply border-border;
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 2L7 14L10.5 11L14 18L16 17L12.5 10L16 10L7 2Z" fill="%23E5B800" stroke="%23D4A600" stroke-width="0.5"/></svg>'), auto;
-  }
+  } */
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
@@ -83,15 +83,15 @@
     scroll-behavior: smooth;
   }
 
-  /* Custom cursor for interactive elements */
+  /* Use default pointer cursor for interactive elements */
   button, a, [role="button"], input, textarea, select {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 2L7 14L10.5 11L14 18L16 17L12.5 10L16 10L7 2Z" fill="%23E5B800" stroke="%23D4A600" stroke-width="1"/></svg>'), pointer !important;
+    cursor: pointer !important;
   }
 
-  /* Dark cursor for yellow backgrounds */
+  /* Dark cursor for yellow backgrounds
   .hero-bg *, .bg-primary-yellow *, .bg-yellow-400 *, .bg-yellow-300 * {
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 2L7 14L10.5 11L14 18L16 17L12.5 10L16 10L7 2Z" fill="%23374151" stroke="%231F2937" stroke-width="0.5"/></svg>'), auto !important;
-  }
+  } */
 
   .hero-bg button, .hero-bg a, .hero-bg [role="button"],
   .bg-primary-yellow button, .bg-primary-yellow a, .bg-primary-yellow [role="button"],
@@ -105,12 +105,12 @@
     font-family: var(--font-poppins);
   }
   
-  .text-gradient {
+  /* .text-gradient {
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 50%, var(--primary-yellow) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-  }
+  } */
   
   .hero-bg {
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 50%, var(--primary-yellow) 100%);

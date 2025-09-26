@@ -15,16 +15,18 @@ export default function HeroSection() {
           
           {/* LEFT CONTENT */}
           <div className="text-center lg:text-left">
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-poppins font-bold text-white mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-poppins font-bold text-white mb-6 leading-measured">
               Make every{" "}
-              <span className="text-yellow-300">school journey</span>
               <br />
-              safer with <span className="text-yellow-300">Skoolary.</span>
+              <span className="text-yellow-400">school journey</span>
+              <br />
+              safer with <span className="text-yellow-400">Skoolary.</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8 leading-relaxed">
-              Empower your school with Skoolary’s advanced real-time tracking
-              system. Gain complete oversight of your bus fleet, and provide
-              unmatched peace of mind for your entire school community.
+            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8 leading-relaxed text-justify">
+              Empower your school with Skoolary’s advanced<br />
+              real-time tracking system. Gain complete<br />
+              oversight of your bus fleet, and provide unmatched<br />
+              peace of mind for your entire school community.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

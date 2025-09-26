@@ -35,7 +35,7 @@ export default function HowItWorks() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-poppins font-bold text-dark-gray mb-6">
-            How <span className="text-gradient">Skoolary</span> Works
+            How <span className="text-yellow-400">Skoolary</span> Works
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Simple, secure, and seamless - Skoolary makes it easy for schools to track and manage every bus journey while keeping parents informed and reassured.
@@ -51,9 +51,9 @@ export default function HowItWorks() {
                   <div className={`w-24 h-24 ${step.color} rounded-full flex items-center justify-center mx-auto shadow-lg`}>
                     <Icon className="h-8 w-8" />
                   </div>
-                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-dark-gray rounded-full flex items-center justify-center">
+                  {/* <div className="absolute -top-2 -right-2 w-8 h-8 bg-dark-gray rounded-full flex items-center justify-center">
                     <span className="text-white font-bold">{step.number}</span>
-                  </div>
+                  </div> */}
                 </div>
 
                 <h3 className="text-2xl font-semibold text-dark-gray mb-4">

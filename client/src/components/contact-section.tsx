@@ -94,14 +94,14 @@ export default function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20" style={{ background: 'linear-gradient(to right, #55A5DA, #E3C370)' }}>
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-4xl lg:text-5xl font-poppins font-bold text-dark-gray mb-6">
-              Ready to Get <span className="text-gradient">Started?</span>
+            <h2 className="text-4xl lg:text-5xl font-poppins font-bold text-white mb-6">
+              Ready to Get <span className="text-yellow-200">Started?</span>
             </h2>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-xl text-white/90 mb-8 leading-relaxed">
               Join the growing number of schools and parents who rely on Skoolary for safe, efficient, and reliable school transportation management.
             </p>
 
@@ -114,8 +114,8 @@ export default function ContactSection() {
                       <Icon className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <div className="font-semibold text-dark-gray">{info.title}</div>
-                      <div className="text-gray-600">{info.value}</div>
+                      <div className="font-semibold text-white">{info.title}</div>
+                      <div className="text-white/80">{info.value}</div>
                     </div>
                   </div>
                 );
